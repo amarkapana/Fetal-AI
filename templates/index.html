@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Fetal AI Health Care Prediction</title>
+</head>
+<body>
+  <h1>Fetal AI Health Care Prediction</h1>
+  <div class="container">
+    <form action="/predict" method="POST">
+      <!-- First Row -->
+      <div class="input-row">
+        <div class="input-group">
+          <label for="acc">Accelerations:</label>
+          <input type="text" id="acc" name="acc" placeholder="Enter value" required>
+        </div>
+        <div class="input-group">
+          <label for="pd">Prolongued Decelerations:</label>
+          <input type="text" id="pd" name="pd" placeholder="Enter value" required>
+        </div>
+        <div class="input-group group-astv">
+          <label for="astv">Abnormal Short-Term Variability:</label>
+          <input type="text" id="astv" name="astv" placeholder="Enter value" required>
+        </div>
+        <div class="input-group group-pot">
+          <label for="pot">Percentage of Abnormal Long-Term Variability:</label>
+          <input type="text" id="pot" name="pot" placeholder="Enter value" required>
+        </div>
+      </div>
+      
+      <!-- Second Row -->
+      <div class="input-row">
+        <div class="input-group">
+          <label for="mv">Mean Long-Term Variability:</label>
+          <input type="text" id="mv" name="mv" placeholder="Enter value" required>
+        </div>
+        <div class="input-group">
+          <label for="hm">Histogram Mode:</label>
+          <input type="text" id="hm" name="hm" placeholder="Enter value" required>
+        </div>
+        <div class="input-group">
+          <label for="hmed">Histogram Median:</label>
+          <input type="text" id="hmed" name="hmed" placeholder="Enter value" required>
+        </div>
+        <div class="input-group">
+          <label for="hv">Histogram Variance:</label>
+          <input type="text" id="hv" name="hv" placeholder="Enter value" required>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button type="submit" class="btn">Predict</button>
+      </div>
+
+    </form>
+
+    <div class="prediction-result">
+      <h2 class= "header-{{ prediction }}">Predicted Health Condition: <span class="span-{{ prediction }}">{{ prediction }} </span></h2>
+    </div>
+  </div>
+</body>
+</html>
