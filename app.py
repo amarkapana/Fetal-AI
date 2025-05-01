@@ -4,7 +4,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-with open(r'C:\Users\user\Documents\Fetal AI\fetal_health.pkl', 'rb') as file:
+with open("fetal_health.pkl", 'rb') as file:
+
     loaded_model = pickle.load(file)
     print(f"Loaded model type: {type(loaded_model)}")
 
