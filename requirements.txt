@@ -4,3 +4,7 @@ tensorflow
 keras
 matplotlib
 streamlit
+flask
+gunicorn
+scikit-learn
+mangum
